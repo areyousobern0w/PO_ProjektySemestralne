@@ -14,6 +14,15 @@ public class Point {
         return ("<circle r=\"2\" cx=\"" + x + "\" cy=\"" + y + "\" fill=\"red\" />");
     }
 
+    public void translate(double dx, double dy) {
+        x += dx;
+        y += dy;
+    }
+
+    public Point translated(double dx, double dy) {
+        return new Point(x + dx, y + dy);
+    }
+
     Point(double x, double y) {
         this.x = x;
         this.y = y;
