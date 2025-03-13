@@ -2,7 +2,15 @@ public class Segment {
     private Point start;
     private Point end;
 
-//    public Segment(Point start, Point end) {
+    public Point getStart() {
+        return start;
+    }
+
+    public Point getEnd() {
+        return end;
+    }
+
+    //    public Segment(Point start, Point end) {
 //        this.start = start;
 //        this.end = end;
 //    }
@@ -79,5 +87,21 @@ public class Segment {
                 new Segment(point, new Point(x1_intersect, y1_intersect)),
                 new Segment(point, new Point(x2_intersect, y2_intersect))
         };
+    }
+
+    public static Segment[] perpendicular(Segment segment, Point point, double length) {
+        Segment[] perpendiculars = Segment.perpendicular(segment, point);
+
+        for (Segment seg : perpendiculars) {
+            double scale = length / segment.length();
+
+            double dx = seg.end.getX() - seg.start.getX();
+            double dy = seg.end.getY() - seg.start.getY();
+
+            seg.end.setX(seg.end.getX() - dx * scale);
+            seg.end.setY(seg.end.getY() - dy * scale);
+        }
+
+        return perpendiculars;
     }
 }

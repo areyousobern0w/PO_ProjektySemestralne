@@ -56,10 +56,10 @@ public class SvgScene {
         Point[] points3 = {new Point(40, 40), new Point(50, 40), new Point(50, 50), new Point(40, 50)};
         Point[] points4 = {new Point(110, 60), new Point(70, 60), new Point(70, 70), new Point(60, 70)};
 
-        Polygon polygon1 = new Polygon(points1);
-        Polygon polygon2 = new Polygon(points2);
-        Polygon polygon3 = new Polygon(points3);
-        Polygon polygon4 = new Polygon(points4);
+        Polygon polygon1 = new Polygon(points1, null);
+        Polygon polygon2 = new Polygon(points2, null);
+        Polygon polygon3 = new Polygon(points3, null);
+        Polygon polygon4 = new Polygon(points4, null);
 
         SvgScene scene = new SvgScene();
         scene.addPolygon(polygon1);
